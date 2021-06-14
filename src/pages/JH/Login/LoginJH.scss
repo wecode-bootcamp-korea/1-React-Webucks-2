@@ -53,16 +53,12 @@
     border: none;
     border-radius: 10px;
     color: $white-color;
-    background-color: $background-login-third-color;
+    background-color: $background-login-fourth-color;
     font-size: $font-size-login-medium;
     text-decoration: none;
-    &:disabled,
-    .bucksBtn[disabled] {
-      opacity: 0.6;
-      cursor: not-allowed;
-      &:enabled {
-        cursor: pointer;
-      }
+    &.active {
+      background-color: $background-login-third-color;
+      cursor: pointer;
     }
   }
 
