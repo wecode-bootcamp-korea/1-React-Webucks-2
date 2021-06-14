@@ -1,0 +1,116 @@
+@import "../../../styles/varieables.scss";
+
+.List {
+  %flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  %banner-shared {
+    width: 100%;
+    padding: 25px;
+    margin-top: 20px;
+    background-color: $background-main-first-color;
+    font-size: $font-size-main-medium;
+    font-weight: $font-weight-medium;
+  }
+
+  %banner-icon-shared {
+    color: $brown-color;
+  }
+
+  %banner-text-shared {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+
+  .allContainer {
+    padding: 150px;
+    padding-top: 0;
+  }
+
+  .header {
+    @extend %flex;
+    width: 100%;
+    margin: 0;
+    padding: 16px;
+    background-color: $background-main-first-color;
+    .logo {
+      a {
+        color: $black-color;
+        text-decoration: none;
+        font-size: $font-size-main-large;
+        font-weight: $font-weight-large;
+        font-family: $title-font-stack;
+      }
+    }
+  }
+
+  .navElement {
+    padding: 20px;
+    color: $gray-nav-color;
+    font-size: $font-size-main-medium;
+    font-weight: $font-weight-medium;
+    font-family: $navElement-font-stack;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .listImage {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: 45% 60%;
+    &:hover {
+      transform: scale(1.1);
+      transition: transform 0.5s ease;
+      cursor: pointer;
+    }
+  }
+
+  .banner {
+    @extend %banner-shared;
+    i {
+      @extend %banner-icon-shared;
+    }
+    .noticeText {
+      @extend %banner-text-shared;
+    }
+  }
+
+  .coldbrew {
+    margin-right: 5px;
+    font-size: $font-size-text-detail-small2;
+  }
+
+  .coffeeList {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+
+  .grid {
+    p {
+      margin-top: 15px;
+      padding-right: 10px;
+      padding-bottom: 30px;
+      text-align: center;
+      i {
+        padding-left: 10px;
+        .fa-heart {
+          color: $gray-icon_color;
+          &:hover {
+            cursor: pointer;
+            &.fas.fa-heart {
+              color: $red-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

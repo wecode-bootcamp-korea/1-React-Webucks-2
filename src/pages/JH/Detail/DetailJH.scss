@@ -1,0 +1,320 @@
+@import "../../../styles/reset.scss";
+@import "../../../styles/varieables.scss";
+
+.Detail {
+  %flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  %padding-shared {
+    padding: 0 70px 30px;
+  }
+
+  %footerMenu-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  %data-shared {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  %reviewContainer-shared {
+    padding: 10px;
+    background-color: $background-detail-color;
+    border-radius: 5px;
+  }
+
+  %label-shared {
+    margin-left: 5px;
+    margin-right: 2px;
+    font-size: $font-size-login-medium;
+    font-weight: $font-weight-medium;
+  }
+
+  %input-shared {
+    width: 400px;
+    padding: 5px;
+    background-color: $background-color-transparent;
+    font-size: $font-size-login-medium;
+  }
+
+  %input-focus-shared {
+    margin-left: 10px;
+    outline: 1px solid $brown-footer-color;
+    outline-offset: 3px;
+    background: $background-color-transparent;
+  }
+
+  .headerContainer {
+    @extend %padding-shared;
+    .header {
+      @extend %flex;
+      width: 100%;
+      margin: 0;
+      padding: 16px;
+      background-color: $background-main-first-color;
+      .logo {
+        a {
+          color: $black-color;
+          font-family: $title-font-stack;
+          font-size: $font-size-main-large;
+          font-weight: $font-weight-large;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .navElement {
+    padding: 20px;
+    color: $gray-nav-color;
+    font-size: $font-size-main-medium;
+    font-weight: $font-weight-medium;
+    font-family: $navElement-font-stack;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .main {
+    @extend %padding-shared;
+    width: 100%;
+    margin-top: 0;
+    background: $white-color;
+    .subtitle {
+      position: relative;
+      .subtitleText {
+        font-size: $font-size-main-large;
+        font-weight: $font-weight-large;
+      }
+    }
+  }
+
+  .titleList {
+    position: absolute;
+    right: 0;
+    a {
+      margin-right: 5px;
+      color: $gray-nav-color;
+      font-size: $titleList-font-size;
+      text-decoration: none;
+    }
+  }
+
+  .products {
+    @extend %padding-shared;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 0 auto;
+    .mocha {
+      flex: 1 1 50%;
+      width: 400px;
+      height: 420px;
+      object-fit: cover;
+    }
+  }
+
+  .productAllContent {
+    flex: 1 1 90%;
+    margin-left: 30px;
+  }
+
+  .productInfor {
+    position: relative;
+    .productName {
+      margin-bottom: 20px;
+      h4 {
+        margin-bottom: 10px;
+        color: $dark-head-color;
+        font-size: $font-size-productname;
+        font-weight: $font-weight-bold;
+      }
+      span {
+        color: $brown-footer-color;
+        font-size: $font-size-detail-small;
+        font-family: $productName-span-font-stack;
+        font-weight: $font-weight-normal;
+      }
+    }
+  }
+
+  .explain {
+    border-top: 2px solid $brown-text-color;
+    p {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: $brown-p-color;
+      font-size: $font-size-login-medium;
+      line-height: 1.6;
+      min-height: 40px;
+    }
+  }
+
+  .heartIcon {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    cursor: pointer;
+  }
+
+  .nutriName {
+    position: relative;
+    padding-left: 20px;
+    border-top: 1px solid $light-border-color;
+    border-bottom: 1px solid $light-border-color;
+    line-height: 59px;
+    .nutriExplain {
+      font-size: $font-size-text-detail-small;
+    }
+    .infoText {
+      position: absolute;
+      top: 2px;
+      right: 0;
+      padding-right: 20px;
+      font-size: $font-size-text-detail-small;
+    }
+  }
+
+  .productInfoContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    margin: 20px 0;
+    color: $brown-p-color;
+    font-size: $font-size-main-medium;
+    .dataList {
+      @extend %data-shared;
+      border-right: 0.5px dashed $gray-border-color;
+    }
+    .dataList2 {
+      @extend %data-shared;
+    }
+  }
+
+  .productInfoContent > ul {
+    width: 50%;
+  }
+
+  .fa-heart {
+    color: $gray-icon_color;
+    &.fas {
+      color: $red-color;
+    }
+  }
+
+  .allergy {
+    padding: 20px;
+    background-color: $background-detail-color;
+    border-radius: 5px;
+    p {
+      font-weight: $font-weight-medium;
+    }
+  }
+
+  .review {
+    border-bottom: 1px solid $light-border-color;
+    p {
+      margin-top: 30px;
+      margin-bottom: 20px;
+      font-size: $font-size-text-detail-small2;
+      font-weight: $font-weight-large-1;
+    }
+  }
+
+  .reviewIDContainer {
+    @extend %reviewContainer-shared;
+    margin-bottom: 8px;
+    .reviewIDForm {
+      .labelForId {
+        @extend %label-shared;
+      }
+      .inputID {
+        @extend %input-shared;
+        &:focus {
+          @extend %input-focus-shared;
+        }
+      }
+    }
+  }
+
+  .reviewContainer {
+    @extend %reviewContainer-shared;
+    .reviewForm {
+      .labelForReview {
+        @extend %label-shared;
+      }
+    }
+    .inputReview {
+      @extend %input-shared;
+      &:focus {
+        @extend %input-focus-shared;
+      }
+    }
+  }
+
+  .reviewText {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    .textContainer {
+      padding-top: 3px;
+      padding-bottom: 5px;
+      .text {
+        margin-right: 8px;
+        font-weight: $font-weight-large;
+      }
+    }
+  }
+
+  .textinputContainer {
+    padding-top: 3px;
+    margin-top: 5px;
+    .textAddID {
+      margin-right: 8px;
+      color: $gray-font-color;
+      &.active {
+        color: $black-color;
+        font-weight: $font-weight-large;
+      }
+    }
+  }
+
+  .footer {
+    width: 100%;
+    padding: 0;
+    color: $white-color;
+    background-color: $brown-detail-color;
+    .footerMenu {
+      @extend %footerMenu-flex;
+      padding: 30px;
+      .footList {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+      }
+    }
+  }
+
+  .listHeader {
+    padding-bottom: 15px;
+    font-size: $font-size-detail-small;
+    text-transform: uppercase;
+  }
+  a {
+    padding: 5px;
+    color: $white-color;
+    font-size: $font-size-detail-small;
+    font-weight: $font-weight-small;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
