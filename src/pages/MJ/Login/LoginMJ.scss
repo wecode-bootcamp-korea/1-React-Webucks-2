@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #eeefef;
+}
+
+.logo {
+  font-family: "Dancing Script", cursive;
+  font-size: 60px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.main-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+  padding: 40px;
+  border: 2px solid lightgray;
+  background: white;
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.loginID,
+.loginPW {
+  width: 280px;
+  height: 40px;
+  margin: 8px 0px;
+  padding: 1px 8px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  outline: none;
+}
+
+.btn {
+  width: 280px;
+  height: 40px;
+  margin: 8px 0px;
+  border: none;
+  border-radius: 10px;
+  background-color: #afdbf7;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.active {
+  background-color: #4fa5db;
+}
+
+.forgotPW {
+  margin-top: 100px;
+  font-size: 13px;
+}
+
+.forgot {
+  text-decoration: none;
+  color: #87adc4;
+}
