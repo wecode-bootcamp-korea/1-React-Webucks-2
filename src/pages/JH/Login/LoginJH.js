@@ -1,8 +1,23 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import "../Login/LoginJH.scss";
 
 class LoginJH extends Component {
+  constructor() {
+    super();
+    this.state = {
+      inputIDValue: "",
+      inputPWValue: "",
+    };
+  }
+
+  handleIDInput = event => {
+    this.setState({ inputIDValue: event.target.value });
+  };
+
+  handlePWInput = event => {
+    this.setState({ inputPWValue: event.target.value });
+  };
+
   render() {
     return (
       <div className="Login">
@@ -13,21 +28,28 @@ class LoginJH extends Component {
               <form action="main.html" id="loginForm">
                 <input
                   type="text"
-                  id="loginID"
+                  id="inputIDValue"
                   className="bucksLogin"
                   placeholder="전화번호, 사용자 이름 또는 이메일"
                   required
+                  onChange={this.handleIDInput}
                 />
                 <input
                   type="password"
-                  id="loginPW"
+                  id="inputPWValue"
                   className="bucksLogin"
                   placeholder="비밀번호"
                   required
+                  onChange={this.handlePWInput}
                 />
-                <Link className="bucksBtn" to="/ListJH">
+                <button
+                  class="bucksBtn"
+                  onClick={() => {
+                    this.props.history.push("/ListJH");
+                  }}
+                >
                   로그인
-                </Link>
+                </button>
               </form>
             </div>
             <div className="forgetPassword">
