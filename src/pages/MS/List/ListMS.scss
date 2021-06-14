@@ -1,62 +1,85 @@
-// ul {
-//     list-style: none;
-// }
-// li {
-//     padding-left: 15px;
-// }
-// .navBox {
-//     display: flex;
-//     background-color: #fae6aa;
-//     justify-content: space-between;
-//     margin-bottom: 25px
-// }
-// .navTitle {
-//     margin: 6px;
-//     padding-left: 13px;
-//     font-family: 'Dancing Script', cursive;
-//     font-size: 26px;
-//     font-weight: bold;
-// }
-// .navList {
-//     display: flex;
-//     margin-top: 21px;
-//     margin-right: 22px;
-//     font-size: 11px;
-// }
-// .coldbrewBox {
-//     display: flex;
-//     align-items: baseline;
-//     background-color: #fae6aa;
-// }
-// .coffeeCupImage {
-//     width: 22px;
-//     height: 22px;
-// }
-// .coldbrewTitle {
-//     margin: 13px 16px;
-//     padding-left: 2px;
-//     font-family: 'Dancing Script', cursive;
-//     font-size: 18px;
-// }
-// .coldbrewDescription {
-//     display: flex;
-//     padding: 0px;
-//     font-size: 11px;
-// }
-// .coldbrewOption {
-//     padding-left: 9px;
-// }
-// .coldBrewImage {
-//     width: 20%;
-// }
-// .coldbrewImageTitle {
-//     margin-top: 0px;
-//     padding-left: 15px;
-// }
-// .Coldbrewimages {
-//     justify-content: space-between;
-// }
-// .ColdbrewDescriptions {
-//     display: flex;
-//     justify-content: space-between;
-// }
+$primary-color: #fae6aa;
+@mixin Navtheme($primary-color) {
+    display: flex;
+    margin-bottom: 25px;
+    background-color: $primary-color;
+}
+
+.navBox {
+    @include Navtheme($primary-color);
+    justify-content: space-between;
+    p {
+        margin: 6px;
+        padding-left: 13px;
+        font-family: 'Dancing Script', cursive;
+        font-size: 26px;
+        font-weight: bold;
+    }
+    ul {
+        display: flex;
+        margin-top: 21px;
+        margin-right: 22px;
+        font-size: 11px;
+        list-style: none;
+    }
+    li {
+        padding-left: 15px;
+    }
+}
+
+.coldbrewBox {
+    @include Navtheme($primary-color);
+    .coldbrewTitle {
+        margin: 13px 16px;
+        padding-left: 2px;
+        font-family: 'Dancing Script', cursive;
+        font-size: 18px;
+    }
+    .coldbrewDescription {
+        display: flex;
+        padding: 0px;
+        font-size: 11px;
+    }
+    p {
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+    .coldbrewIcon {
+        margin-top: 15px;
+        height: 20px;
+        width: 20px;
+    }
+}
+
+.coldBrewImage {
+    width: 200px;
+    height: 200px;
+    .coldbrewImageTitle {
+        margin-top: 2px;
+        padding-left: 53px;
+    }
+    .coldbrewImageWrapper {
+        flex-direction: column;
+    }
+}
+
+.coldbreImageList1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .coldbreImageList2 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .coldbreImageList3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        column-gap: 60px;
+    }
+    .coldbreImageList4 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        column-gap: 60px;
+    }
+}

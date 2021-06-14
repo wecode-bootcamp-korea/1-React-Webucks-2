@@ -1,18 +1,15 @@
 import React, { Component } from "react";
+import { BiCoffee } from "react-icons/bi";
 
 class NavMS extends Component {
   render() {
     return (
       <>
         <div className="coldbrewBox">
-          <p className="coldbrewTitle">{this.props.titllText}</p>
           <div className="coldbrewDescription">
-            <img
-              src="./images/coffee-cup.png"
-              alt="커피컵"
-              className="coffeeCupImage"
-            />
-            <p className="coldbrewOption">{this.props.DescriptionText}</p>
+            <span className="coldbrewTitle">{this.props.TitleText}</span>
+            <BiCoffee class="coldbrewIcon" />
+            <p className="ColdbrewText">{this.props.DescriptionText}</p>
           </div>
         </div>
       </>

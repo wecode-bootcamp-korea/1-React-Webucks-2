@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./LoginMS.scss";
-import "./LoginFunction";
 
 class LoginMS extends Component {
   render() {
