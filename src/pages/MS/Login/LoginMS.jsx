@@ -4,9 +4,20 @@ import "./LoginMS.scss";
 class LoginMS extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      id: "",
+      pw: "",
+    };
   }
-  handleIdInput = () => {};
+  handleIdInput = e => {
+    console.log(e.target.value);
+    this.setState = { id: e.target.value };
+  };
+  handlePwInput = e => {
+    console.log(e.target.value);
+    this.setState = { pw: e.target.value };
+  };
+
   render() {
     return (
       <>
@@ -22,7 +33,12 @@ class LoginMS extends Component {
                 type="text"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
               />
-              <input className="putPw" type="text" placeholder="비밀번호" />
+              <input
+                onChange={this.handlePwInput}
+                className="putPw"
+                type="password"
+                placeholder="비밀번호"
+              />
             </main>
             <section>
               <button className="loginBtn">로그인</button>
