@@ -2,6 +2,11 @@ import React, { Component } from "react";
 import "./LoginMS.scss";
 
 class LoginMS extends Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
+  handleIdInput = () => {};
   render() {
     return (
       <>
@@ -12,6 +17,7 @@ class LoginMS extends Component {
             </header>
             <main className="puts">
               <input
+                onChange={this.handleIdInput}
                 className="putId"
                 type="text"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
