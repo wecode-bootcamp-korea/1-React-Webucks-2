@@ -1,5 +1,5 @@
 @import "../../../styles/reset.scss";
-@import "../../../styles/varieables.scss";
+@import "../../../styles/variables.scss";
 
 .Detail {
   %flex {
@@ -161,7 +161,12 @@
     position: absolute;
     top: 20px;
     right: 0;
+    color: $gray-icon_color;
     cursor: pointer;
+  }
+
+  .clickOnIcon {
+    color: $red-color;
   }
 
   .nutriName {
@@ -200,13 +205,6 @@
 
   .productInfoContent > ul {
     width: 50%;
-  }
-
-  .fa-heart {
-    color: $gray-icon_color;
-    &.fas {
-      color: $red-color;
-    }
   }
 
   .allergy {
