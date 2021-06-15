@@ -7,17 +7,29 @@ class LoginMS extends Component {
     this.state = {
       id: "",
       pw: "",
+      active: false,
     };
   }
   handleIdInput = e => {
     console.log(e.target.value);
     this.setState = { id: e.target.value };
+    console.log(e.target.value.includes("@") && this.state.pw.length > 5);
+    if (e.target.value.includes("@") && this.state.pw.length > 5) {
+      this.setState = { active: true };
+    } else {
+      this.setState = { active: false };
+    }
   };
   handlePwInput = e => {
     console.log(e.target.value);
     this.setState = { pw: e.target.value };
+    console.log(e.target.value.length > 5 && this.state.id.includes("@"));
+    if (e.target.value.length > 5 && this.state.id.includes("@")) {
+      this.setState = { active: true };
+    } else {
+      this.setState = { active: false };
+    }
   };
-
   render() {
     return (
       <>
@@ -41,7 +53,11 @@ class LoginMS extends Component {
               />
             </main>
             <section>
-              <button className="loginBtn">로그인</button>
+              <button
+                className={this.state.active ? "loginBtn active" : "loginBtn"}
+              >
+                로그인
+              </button>
             </section>
             <footer className="missPw">
               <a
