@@ -45,15 +45,4 @@ class Routes extends React.Component {
   }
 }
 
-// //민성 로그인 기능 구현//
-// class LoginFunction extends Component{
-//   Constructor
-//     Super();
-//     this.state = {
-
-//     }
-//      return (
-//    }
-// }
-
 export default Routes;
