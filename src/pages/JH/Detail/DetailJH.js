@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { BiHeart } from "react-icons/bi";
 import DetailNav from "../Detail/Detail-nav-component";
 import DetailFooter from "../Detail/Detail-footer-component";
 import DataList from "../Detail/Detail-data-component";
-import ReviewContent from "../Detail/Detail-reveiw-component";
+import ClickHeartIcon from "../Detail/Detail-hearticon-component";
+import InputReview from "./Detail-input-component.js";
 import "../Detail/DetailJH.scss";
+import { FOOTER_DATA } from "../../../MockData";
 
 class DetailJH extends Component {
   render() {
@@ -17,11 +18,11 @@ class DetailJH extends Component {
               <div className="subtitle">
                 <h2 className="subtitleText">콜드 브루</h2>
                 <div className="titleList">
-                  <a href="main.html">홈 {">"}</a>
-                  <a href="main.html">menu {">"}</a>
-                  <a href="main.html">음료 {">"}</a>
-                  <a href="main.html">에스프레소 {">"}</a>
-                  <a href="main.html">카페 모카</a>
+                  <a href="/">홈 {">"}</a>
+                  <a href="/">menu {">"}</a>
+                  <a href="/">음료 {">"}</a>
+                  <a href="/">에스프레소 {">"}</a>
+                  <a href="/">카페 모카</a>
                 </div>
               </div>
             </div>
@@ -48,9 +49,7 @@ class DetailJH extends Component {
                       <br />
                     </p>
                   </div>
-                  <div className="heartIcon">
-                    <BiHeart />
-                  </div>
+                  <ClickHeartIcon />
                 </div>
                 <div className="productNutrition">
                   <div className="nutriName">
@@ -80,47 +79,21 @@ class DetailJH extends Component {
                 <div className="review">
                   <p>리뷰</p>
                 </div>
-                <div className="reviewText">
-                  <ReviewContent ID="coffee_lover" review="너무 맛있어요!" />
-                  <ReviewContent
-                    ID="CHOCO7"
-                    review="오늘도 카페 모카를 마시러 갑니다. 최애 커피에요!"
-                  />
-                  <p className="textinputContainer">
-                    <span className="textAddID">등록된 리뷰가 없습니다.</span>
-                    <span className="textAddContainer"></span>
-                  </p>
-                </div>
-                <div className="reviewIDContainer">
-                  <form className="reviewIDForm">
-                    <label for="reviewId" className="labelForId">
-                      아이디
-                    </label>
-                    <input
-                      type="text"
-                      className="inputID"
-                      id="reviewId"
-                      placeholder="아이디를 입력해주세요."
-                    />
-                  </form>
-                </div>
-                <div className="reviewContainer">
-                  <form className="reviewForm">
-                    <label for="reviewText" className="labelForReview">
-                      리뷰
-                    </label>
-                    <input
-                      type="text"
-                      className="inputReview"
-                      id="reviewText"
-                      placeholder="리뷰를 입력해주세요."
-                    />
-                  </form>
-                </div>
+                <InputReview />
               </div>
             </div>
           </section>
-          <DetailFooter />
+          <footer className="footer">
+            <div className="footerMenu">
+              {FOOTER_DATA.map(items => (
+                <DetailFooter
+                  key={items.id}
+                  section={items.section}
+                  goTo={items.goTo}
+                />
+              ))}
+            </div>
+          </footer>
         </div>
       </div>
     );
