@@ -11,8 +11,6 @@ class LoginJH extends Component {
   }
 
   handleInput = event => {
-    console.log(event.target.value);
-    console.log(event.target.name);
     this.setState({ [event.target.name]: event.target.value });
   };
 
