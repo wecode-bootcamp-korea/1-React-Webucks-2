@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import ListNav from "../List/List-nav-component";
 import Beverage from "./List-beverage-component";
+import BEVERAGE_DATA, { BEVERAGE_DATA2 } from "../../../MockData";
 import { FaCoffee } from "react-icons/fa";
-import BEVERAGE_DATA from "../../../MockData";
 import "../List/ListJH.scss";
 
 class ListJH extends Component {
@@ -19,11 +19,13 @@ class ListJH extends Component {
             </span>
           </div>
           <div className="coffeeList">
-            {BEVERAGE_DATA.map((beverage, index) => {
-              return (
-                <Beverage key={index} img={beverage.img} name={beverage.name} />
-              );
-            })}
+            {BEVERAGE_DATA.map(beverage => (
+              <Beverage
+                key={beverage.id}
+                img={beverage.img}
+                name={beverage.name}
+              />
+            ))}
           </div>
           <div className="banner">
             <span className="coldbrew">브루드 커피</span>
@@ -33,8 +35,13 @@ class ListJH extends Component {
             </span>
           </div>
           <div className="coffeeList">
-            <Beverage img="/images/tea8.jpeg" name="딸기 크림 프라페" />
-            <Beverage img="/images/tea9.jpeg" name="커피 크림 프라페" />
+            {BEVERAGE_DATA2.map(beverage => (
+              <Beverage
+                key={beverage.id}
+                img={beverage.img}
+                name={beverage.name}
+              />
+            ))}
           </div>
         </div>
       </div>
