@@ -6,29 +6,12 @@ class LoginMS extends Component {
     super();
     this.state = {
       id: "",
-      pw: "",
-      active: false,
+      password: "",
     };
   }
-  handleIdInput = e => {
-    console.log(e.target.value);
-    this.setState = { id: e.target.value };
-    console.log(e.target.value.includes("@") && this.state.pw.length > 5);
-    if (e.target.value.includes("@") && this.state.pw.length > 5) {
-      this.setState = { active: true };
-    } else {
-      this.setState = { active: false };
-    }
-  };
-  handlePwInput = e => {
-    console.log(e.target.value);
-    this.setState = { pw: e.target.value };
-    console.log(e.target.value.length > 5 && this.state.id.includes("@"));
-    if (e.target.value.length > 5 && this.state.id.includes("@")) {
-      this.setState = { active: true };
-    } else {
-      this.setState = { active: false };
-    }
+  handleInput = e => {
+    this.setState({ [e.target.name]: e.target.value });
+    console.log(this.state.id.includes("@") && this.state.password.length > 5);
   };
   render() {
     return (
@@ -40,13 +23,15 @@ class LoginMS extends Component {
             </header>
             <main className="puts">
               <input
-                onChange={this.handleIdInput}
+                name="id"
+                onChange={this.handleInput}
                 className="putId"
                 type="text"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
               />
               <input
-                onChange={this.handlePwInput}
+                name="password"
+                onChange={this.handleInput}
                 className="putPw"
                 type="password"
                 placeholder="비밀번호"
@@ -54,7 +39,11 @@ class LoginMS extends Component {
             </main>
             <section>
               <button
-                className={this.state.active ? "loginBtn active" : "loginBtn"}
+                className={
+                  this.state.id.includes("@") && this.state.password.length > 5
+                    ? "loginBtn active"
+                    : "loginBtn"
+                }
               >
                 로그인
               </button>

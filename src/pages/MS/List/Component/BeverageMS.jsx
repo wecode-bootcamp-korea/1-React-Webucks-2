@@ -4,14 +4,12 @@ import { BiHeart } from "react-icons/bi";
 class BeverageMS extends Component {
   render() {
     return (
-      <>
-        <span class="coldbrewImageWrapper">
-          <img src={this.props.image} alt="beverageImg" class="coldBrewImage" />
-          <p class="coldbrewImageTitle">
-            {this.props.name} <BiHeart />
-          </p>
-        </span>
-      </>
+      <span class="coldbrewImageWrapper">
+        <img src={this.props.image} alt="beverageImg" class="coldBrewImage" />
+        <p class="coldbrewImageTitle">
+          {this.props.name} <BiHeart />
+        </p>
+      </span>
     );
   }
 }
