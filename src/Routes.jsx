@@ -10,6 +10,7 @@ import DetailJH from "./pages/JH/Detail/DetailJH.js";
 import LoginMS from "./pages/MS/Login/LoginMS";
 import ListMS from "./pages/MS/List/ListMS.jsx";
 import DetailMS from "./pages/MS/Detail/DetailMS.jsx";
+import productListMS from "./pages/MS/List/Component/productListMS";
 
 //미정 컴포넌트
 import LoginMJ from "./pages/MJ/Login/LoginMJ";
@@ -33,6 +34,7 @@ class Routes extends React.Component {
           <Route exact path="/LoginMS" component={LoginMS} />{" "}
           <Route exact path="/ListMS" component={ListMS} />{" "}
           <Route exact path="/DetailMS" component={DetailMS} />{" "}
+          <Route exact path="/productListMS" component={productListMS} />{" "}
           <Route exact path="/LoginMJ" component={LoginMJ} />{" "}
           <Route exact path="/ListMJ" component={ListMJ} />{" "}
           <Route exact path="/DetailMJ" component={DetailMJ} />{" "}
