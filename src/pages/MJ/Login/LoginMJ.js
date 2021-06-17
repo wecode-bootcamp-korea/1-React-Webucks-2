@@ -10,37 +10,38 @@ class LoginMJ extends Component {
     };
   }
 
-  handleIdInput = event => {
-    console.log("id?", event.target.value);
-    this.setState({ id: event.target.value });
-  };
-
-  handlePasswordInput = event => {
-    console.log("pw?", event.target.value);
-    this.setState({ password: event.target.value });
+  handleInput = event => {
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   render() {
+    const { id, password } = this.state;
     return (
       <main className="main-container">
         <div className="main-wrap">
           <header className="logo">Webucks</header>
           <form className="login">
             <input
-              onChange={this.handleIdInput}
+              onChange={this.handleInput}
               className="loginID"
               name="id"
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
             />
             <input
-              onChange={this.handlePasswordInput}
+              onChange={this.handleInput}
               className="loginPW"
               name="password"
               type="password"
               placeholder="비밀번호"
             />
-            <button className="btn active">로그인</button>
+            <button
+              className={
+                id.includes("@") && password.length > 5 ? "active" : "btn"
+              }
+            >
+              로그인
+            </button>
           </form>
           <footer className="forgotPW">
             <a className="forgot" href="#none">
