@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.wrap-everything {
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+.top-nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.top-nav-bar,
+.nav {
+  background-color: #f6f5ef;
+}
+
+.logotop,
+.navlist {
+  text-decoration: none;
+}
+
+.logotop {
+  font-family: "Dancing Script", cursive;
+  font-weight: bold;
+  color: black;
+  font-size: 30px;
+}
+
+.nav {
+  margin-top: 10px;
+}
+
+.navlist {
+  margin: 8px;
+  color: #9e9d97;
+  font-size: 15px;
+}
+
+.sectionNav {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  background-color: #f4f4f2;
+}
+
+.coffeeIcon {
+  padding-left: 5px;
+}
+
+.info {
+  padding-left: 8px;
+  font-size: 13px;
+}
+
+.coffeeList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 10px;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+.listImage {
+  margin: 2px;
+}
