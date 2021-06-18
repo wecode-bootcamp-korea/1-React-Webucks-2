@@ -5,8 +5,6 @@ class InputReview extends Component {
   constructor() {
     super();
     this.state = {
-      // inputReviewValue: "",
-      // inputIDValue: "",
       ReviewData: [],
     };
   }
@@ -19,8 +17,6 @@ class InputReview extends Component {
     event.preventDefault();
     const inputID = event.target.inputIDValue.value;
     const inputReview = event.target.inputReviewValue.value;
-    console.log(inputID);
-    console.log(inputReview);
     if (!inputID) {
       alert("아이디가 없네요? 입력해주세요 ✨");
     } else if (!inputReview) {
@@ -81,7 +77,9 @@ class InputReview extends Component {
               onChange={this.pushReviewComment}
               value={this.state.inputReview}
             />
-            <button type="submit">제출</button>
+            <button className="submitBtn" type="submit">
+              제출
+            </button>
           </form>
         </div>
       </>
