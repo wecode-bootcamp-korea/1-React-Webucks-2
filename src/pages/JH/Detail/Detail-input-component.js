@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import ReviewContent from "./Detail-reveiw-component";
+import ReviewContent from "./Detail-review-component";
 
 class InputReview extends Component {
   constructor() {
     super();
     this.state = {
-      inputReviewValue: "",
-      inputIDValue: "",
+      // inputReviewValue: "",
+      // inputIDValue: "",
       ReviewData: [],
     };
   }
@@ -15,33 +15,29 @@ class InputReview extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  addReviewComment = () => {
-    const { ReviewData, inputIDValue, inputReviewValue } = this.state;
-    if (!inputIDValue) {
-      alert("아이디가 없네요? 입력해주세요");
-    }
-    if (!inputReviewValue) {
-      alert("리뷰가 없네요? 입력해주세요");
-    }
-    if (inputIDValue && inputReviewValue) {
+  addReviewComment = event => {
+    event.preventDefault();
+    const inputID = event.target.inputIDValue.value;
+    const inputReview = event.target.inputReviewValue.value;
+    console.log(inputID);
+    console.log(inputReview);
+    if (!inputID) {
+      alert("아이디가 없네요? 입력해주세요 ✨");
+    } else if (!inputReview) {
+      alert("리뷰가 없네요? 입력해주세요 ✨");
+    } else if (inputID && inputReview) {
       this.setState({
         ReviewData: [
-          ...ReviewData,
+          ...this.state.ReviewData,
           {
-            inputID: inputIDValue,
-            inputReview: inputReviewValue,
+            inputID: inputID,
+            inputReview: inputReview,
           },
         ],
       });
+      event.target.reset();
     } else {
       return;
-    }
-  };
-
-  addCommentEnter = event => {
-    if (event.key === "Enter") {
-      this.addReviewComment();
-      event.target.value = "";
     }
   };
 
@@ -60,7 +56,7 @@ class InputReview extends Component {
           ))}
         </div>
         <div className="reviewContainer">
-          <form className="reviewForm">
+          <form className="reviewForm" onSubmit={this.addReviewComment}>
             <label htmlFor="reviewText" className="labelForReview">
               아이디
             </label>
@@ -71,7 +67,7 @@ class InputReview extends Component {
               name="inputIDValue"
               placeholder="아이디를 입력해주세요."
               onChange={this.pushReviewComment}
-              onKeyPress={this.addCommentEnter}
+              value={this.state.inputID}
             />
             <label htmlFor="reviewText" className="labelForReview">
               리뷰
@@ -83,8 +79,9 @@ class InputReview extends Component {
               name="inputReviewValue"
               placeholder="리뷰를 입력해주세요."
               onChange={this.pushReviewComment}
-              onKeyPress={this.addCommentEnter}
+              value={this.state.inputReview}
             />
+            <button type="submit">제출</button>
           </form>
         </div>
       </>
