@@ -6,22 +6,24 @@ class DetailNav extends Component {
       <header className="headerContainer">
         <div className="header">
           <h1 className="logo">
-            <a href="main.html">ZuckerBucks</a>
+            <a href="/">ZuckerBucks</a>
           </h1>
           <nav className="headerNav">
             <ul>
-              <a href="main.html" className="navElement">
-                coffee
-              </a>
-              <a href="main.html" className="navElement">
-                menu
-              </a>
-              <a href="main.html" className="navElement">
-                store
-              </a>
-              <a href="main.html" className="navElement">
-                what's new
-              </a>
+              <li>
+                <a href="/" className="navElement">
+                  coffee
+                </a>
+                <a href="/" className="navElement">
+                  menu
+                </a>
+                <a href="/" className="navElement">
+                  store
+                </a>
+                <a href="/" className="navElement">
+                  what's new
+                </a>
+              </li>
             </ul>
           </nav>
         </div>
