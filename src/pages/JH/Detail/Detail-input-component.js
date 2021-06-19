@@ -37,6 +37,14 @@ class InputReview extends Component {
     }
   };
 
+  deleteComments = () => {
+    const { ReviewData } = this.state;
+    const deletingComm = this.state.comment;
+    this.setState({
+      ReviewData: ReviewData.filter(comm => comm.id !== deletingComm),
+    });
+  };
+
   render() {
     const { ReviewData } = this.state;
     return (
@@ -52,6 +60,7 @@ class InputReview extends Component {
               key={index}
               ID={comment.inputID}
               review={comment.inputReview}
+              deleteComments={this.deleteComments}
             />
           ))}
         </div>
