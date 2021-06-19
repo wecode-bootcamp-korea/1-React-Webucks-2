@@ -15,19 +15,19 @@ class InputReview extends Component {
 
   addReviewComment = event => {
     event.preventDefault();
-    const inputID = event.target.inputIDValue.value;
-    const inputReview = event.target.inputReviewValue.value;
-    if (!inputID) {
+    const inputIDs = event.target.inputIDValue.value;
+    const inputReviews = event.target.inputReviewValue.value;
+    if (!inputIDs) {
       alert("아이디가 없네요? 입력해주세요 ✨");
-    } else if (!inputReview) {
+    } else if (!inputReviews) {
       alert("리뷰가 없네요? 입력해주세요 ✨");
-    } else if (inputID && inputReview) {
+    } else if (inputIDs && inputReviews) {
       this.setState({
         ReviewData: [
           ...this.state.ReviewData,
           {
-            inputID: inputID,
-            inputReview: inputReview,
+            inputID: inputIDs,
+            inputReview: inputReviews,
           },
         ],
       });
@@ -47,8 +47,12 @@ class InputReview extends Component {
             ID="CHOCO7"
             review="오늘도 카페 모카를 마시러 갑니다. 최애 커피에요!"
           />
-          {ReviewData.map(comment => (
-            <ReviewContent ID={comment.inputID} review={comment.inputReview} />
+          {ReviewData.map((comment, index) => (
+            <ReviewContent
+              key={index}
+              ID={comment.inputID}
+              review={comment.inputReview}
+            />
           ))}
         </div>
         <div className="reviewContainer">
