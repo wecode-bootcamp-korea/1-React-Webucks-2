@@ -1,0 +1,74 @@
+@import "../../../styles/varieables.scss";
+
+.Login {
+  %flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  %bucks-shared {
+    width: 310px;
+  }
+
+  .allContainer {
+    @extend %flex-center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .bucksContainer {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 500px;
+    border: 1px solid $background-login-second-color;
+    text-align: center;
+    .title {
+      margin-top: 50px;
+      margin-bottom: 20px;
+      font-size: $font-size-login-large;
+      font-family: $title-font-stack;
+      font-weight: $font-weight-large;
+    }
+  }
+
+  .bucksLogin {
+    @extend %bucks-shared;
+    padding: 12px 10px;
+    margin-top: 10px;
+    border: 1px solid $background-login-second-color;
+    border-radius: 3px;
+    background-color: $background-login-first-color;
+    outline: none;
+    &.active {
+      border-color: $green-color;
+    }
+  }
+
+  .bucksBtn {
+    @extend %bucks-shared;
+    display: block;
+    padding: 12px 5px;
+    margin: 12px auto;
+    border: none;
+    border-radius: 10px;
+    color: $white-color;
+    background-color: $background-login-fourth-color;
+    font-size: $font-size-login-medium;
+    text-decoration: none;
+    &.active {
+      background-color: $background-login-third-color;
+      cursor: pointer;
+    }
+  }
+
+  .forgetPassword {
+    margin-top: 120px;
+    font-size: $font-size-login-small;
+    font-weight: $font-weight-medium;
+    .bucksLink {
+      color: $blue-color;
+      text-decoration: none;
+    }
+  }
+}
