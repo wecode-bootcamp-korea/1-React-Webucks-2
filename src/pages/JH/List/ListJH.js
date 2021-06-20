@@ -1,11 +1,30 @@
 import React, { Component } from "react";
 import ListNav from "../List/List-nav-component";
 import Beverage from "./List-beverage-component";
-import BEVERAGE_DATA, { BEVERAGE_DATA2 } from "../../../MockData";
+import { BEVERAGE_DATA2 } from "../../../MockData";
 import { FaCoffee } from "react-icons/fa";
 import "../List/ListJH.scss";
 
 class ListJH extends Component {
+  constructor() {
+    super();
+    this.state = {
+      beverage: [],
+    };
+  }
+
+  componentDidMount() {
+    fetch("/data/myData.json", {
+      method: "GET",
+    })
+      .then(response => response.json())
+      .then(data => {
+        this.setState({
+          beverage: data.BEVERAGE_DATA,
+        });
+      });
+  }
+
   render() {
     return (
       <div className="List">
@@ -19,11 +38,11 @@ class ListJH extends Component {
             </span>
           </div>
           <div className="coffeeList">
-            {BEVERAGE_DATA.map(beverage => (
+            {this.state.beverage.map(beverages => (
               <Beverage
-                key={beverage.id}
-                img={beverage.img}
-                name={beverage.name}
+                key={beverages.id}
+                img={beverages.img}
+                name={beverages.name}
               />
             ))}
           </div>
@@ -35,11 +54,11 @@ class ListJH extends Component {
             </span>
           </div>
           <div className="coffeeList">
-            {BEVERAGE_DATA2.map(beverage => (
+            {BEVERAGE_DATA2.map(beverages => (
               <Beverage
-                key={beverage.id}
-                img={beverage.img}
-                name={beverage.name}
+                key={beverages.id}
+                img={beverages.img}
+                name={beverages.name}
               />
             ))}
           </div>
