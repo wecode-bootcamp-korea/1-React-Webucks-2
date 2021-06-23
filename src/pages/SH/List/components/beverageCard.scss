@@ -1,0 +1,11 @@
+img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
