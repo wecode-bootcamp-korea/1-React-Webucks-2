@@ -4,14 +4,12 @@ import "./beverageCard.scss";
 
 class BeverageCard extends Component {
   render() {
-    console.log("부모가 준 값", this.props);
+    console.log(this.props);
     return (
-      <>
-        <div className="box">
-          <img className="beverage" src={this.props.abc} />
-          <p>{this.props.abcd}</p>
-        </div>
-      </>
+      <div className="beverageCardWrapper">
+        <img className="beverage" src={this.props.img} />
+        {this.props.name}
+      </div>
     );
   }
 }

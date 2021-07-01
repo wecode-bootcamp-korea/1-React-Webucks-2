@@ -5,38 +5,28 @@ import TopNav from "./components/topNav";
 import MidNav from "./components/midNav";
 import BottomNav from "./components/bottomNav";
 import BeverageCard from "./components/beverageCard";
-
-const DATA = [
-  {
-    name: "바닐라라떼",
-    img: "https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[9200000000487]_20210430112319174.jpg",
-  },
-  {
-    name: "아메리카노",
-    img: "https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[9200000000487]_20210430112319174.jpg",
-  },
-  {
-    name: "라떼",
-    img: "https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[9200000000487]_20210430112319174.jpg",
-  },
-  {
-    name: "카페모카",
-    img: "https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[9200000000487]_20210430112319174.jpg",
-  },
-];
+import BeverageCardData from "../../../mockData/listMockData";
 
 class ListSH extends Component {
   render() {
     return (
-      <>
-        <TopNav />
+      <div className="container">
+        <TopNav className="topBanner" />
         <MidNav />
-        <BottomNav />
-        {DATA.map(element => {
-          return <BeverageCard abc={element.img} abcd={element.name} />;
-        })}
+        <div className="cardWrap">
+          <div className="coffeeList">
+            {BeverageCardData.map(beverage => (
+              <BeverageCard
+                key={beverage.id} // 이렇게 부모컨포넌트에서 목데이터를 맵함수를 이용하고
+                img={beverage.img} // 프랍스를 통해 자식에게 넘겨준다
+                name={beverage.name}
+              />
+            ))}
+          </div>
+        </div>
         <input type="text" placeholder="이름" />
-      </>
+        <BottomNav />
+      </div>
     );
   }
 }

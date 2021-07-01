@@ -1,8 +1,7 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from "react";
 import "./LoginSH.scss";
 
-class LoginSH extends Component {
+class LoginTest extends Component {
   constructor() {
     super();
     this.state = {
@@ -13,8 +12,6 @@ class LoginSH extends Component {
       abc: "red",
     };
   }
-
-  // constructor와 render사이에 함수
 
   handleIdInput = event => {
     console.log(event.target.value);
@@ -70,4 +67,4 @@ class LoginSH extends Component {
     );
   }
 }
-export default LoginSH;
+export default LoginTest;
