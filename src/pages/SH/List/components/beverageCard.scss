@@ -1,0 +1,11 @@
+.beverageCardWrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  float: left;
+
+  .beverage {
+    width: 200px;
+    height: 200px;
+  }
+}

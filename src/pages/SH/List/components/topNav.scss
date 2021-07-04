@@ -1,0 +1,21 @@
+.topNavWrap {
+  background-color: rgb(241, 241, 240);
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+
+  .title {
+    margin-left: 10px;
+    font-family: "Dancing Script", cursive;
+  }
+
+  .navList {
+    .navItem {
+      list-style: none;
+      margin-right: 10px;
+      word-spacing: 20px;
+      color: #a5a4a4;
+      float: left;
+    }
+  }
+}
